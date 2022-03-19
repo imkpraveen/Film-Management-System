@@ -1,0 +1,333 @@
+﻿<Window x:Class="FilmManangemenSystemWPF.FilmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FilmManangemenSystemWPF"
+        mc:Ignorable="d"
+        Title="FilmWindow" Height="550" Width="1000">
+    <TabControl Margin="5" Background="Lavender">
+        <TabItem Header="Add" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Width="70">
+            <Grid Margin="15px" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="173*"></ColumnDefinition>
+                    <ColumnDefinition Width="346*"/>
+                    <ColumnDefinition Width="520*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="479*"></RowDefinition>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0.4,-0.2" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.Row="0" Grid.ColumnSpan="2">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.Row="1" Grid.ColumnSpan="2">Films Details</Label>
+                        <Button 
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Padding="5"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="0,50,0,0"
+                    Height="150"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="21.6,0,0.6,-0.2" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Content="Enter Title" FontFamily="Times New Roman" FontSize="24" Grid.Column="0" Grid.Row="0"/>
+                        <TextBox Name="txtFilmTitleAdd" Grid.Column="1" Grid.Row="0"/>
+                        <Label Content="Enter Description" FontFamily="Times New Roman" FontSize="24" Grid.Column="0" Grid.Row="1"/>
+                        <TextBox Name="txtFilmDescAdd" Grid.Column="1" Grid.Row="1"/>
+                        <Label Content="Release Year" FontFamily="Times New Roman" FontSize="24" Grid.Column="0" Grid.Row="2"/>
+                        <DatePicker Name="dpReleaseYear" Padding="5" Grid.Column="1" Grid.Row="2"></DatePicker>
+                        <Label Content="Rental Duration" FontFamily="Times New Roman" FontSize="24" Grid.Column="0" Grid.Row="3"/>
+                        <DatePicker Name="dpRentalDuration" Grid.Column="1" Grid.Row="3"></DatePicker>
+                        <Label Content="Replacement Cost" FontFamily="Times New Roman" FontSize="24" Grid.Column="0" Grid.Row="4"/>
+                        <TextBox Name="txtReplaceCostAdd" Grid.Column="1" Grid.Row="4"/>
+                        <Label Content="Length" Margin="0,0,-0.4,0" FontFamily="Times New Roman" FontSize="24" Grid.Column="0" Grid.Row="5"/>
+                        <TextBox Name="txtLengthAdd" Grid.Column="1" Grid.Row="5"/>
+                        <Label Content="Language" Grid.Column="0" Grid.Row="6" FontFamily="Times New Roman" FontSize="24"/>
+                        <ComboBox Name="cb_LanguageAdd" Grid.Column="1" Grid.Row="6" ItemsSource="{Binding}"/>
+                        <Label Content="Rating" Grid.Column="0" Grid.Row="7" FontFamily="Times New Roman" FontSize="24"/>
+                        <TextBox Name="txtRatingAdd" Grid.Column="1" Grid.Row="7"/>
+                        <Label Content="Actor" Grid.Column="0" Grid.Row="8" FontFamily="Times New Roman" FontSize="24"/>
+                        <ComboBox Name="cb_ActorAdd" Grid.Column="1" Grid.Row="8" ItemsSource="{Binding}"/>
+                        <Label Content="Category" Grid.Column="0" Grid.Row="9" FontFamily="Times New Roman" FontSize="24"/>
+                        <ComboBox Name="cb_CategoryAdd" Grid.Column="1" Grid.Row="9" ItemsSource="{Binding}"/>
+                        <Button x:Name="btn_FilmAdd" Grid.Row="11" Grid.Column="0" Content="Add" Click="Btn_FilmAdd_Click" Foreground="White" Background="PaleGreen"/>
+                        <Button x:Name="btn_FilmAddReset" Content="Reset" Click="btn_FilmAddReset_Click" Foreground="White" Background="Tomato" Grid.Column="1" Grid.Row="11"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Name="tab_FilmList" Header="List" FontSize="20" FontFamily="Times New Roman" Width="70" Loaded="Tab_FilmList_Loaded" Margin="0,-2,0,2">
+            <StackPanel Orientation="Vertical">
+                <DataGrid Name="dg_FilmList"  ColumnWidth="*"></DataGrid>
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="Update" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Margin="0.2,-2,-27.8,0">
+            <Grid Margin="15px" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="701*"></ColumnDefinition>
+                    <ColumnDefinition Width="778*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,0.2,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label FontSize="20" HorizontalAlignment="Center" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Row="0">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Row="1">Films Details</Label>
+                        <Button 
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="3" Grid.ColumnSpan="2" Height="25" Margin="0,0.4,0.4,0" VerticalAlignment="Top"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="0,50,0,0"
+                   Height="150"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Content="Enter FilmId" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="0" FontSize="24" FontWeight="Normal"/>
+                        <TextBox Name="txtFilmIdUpdate" Grid.Column="1" Grid.Row="0"/>
+                        <Label Content="Enter Title" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="1" FontSize="24"/>
+                        <TextBox Name="txtFilmTitleUpdate" Grid.Column="1" Grid.Row="1"/>
+                        <Label Content="Enter Description" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="2" FontSize="24"/>
+                        <TextBox Name="txtFilmDescUpdate" Grid.Column="1" Grid.Row="2"/>
+                        <Label Content="Release Year" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="3" FontSize="24"/>
+                        <DatePicker Name="dpReleaseYearUpdate" Grid.Column="1" Grid.Row="3"></DatePicker>
+                        <Label Content="Rental Duration" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="4" FontSize="24"/>
+                        <DatePicker Name="dpRentDurationUpdate" Grid.Column="1" Grid.Row="4"></DatePicker>
+                        <Label Content="Replacement Cost" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="5" FontSize="24"/>
+                        <TextBox Name="txtReplaceCostUpdate" Grid.Column="1" Grid.Row="5"/>
+                        <Label Content="Language" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="6" FontSize="24"/>
+                        <ComboBox Name="cb_LanguageUpdate" ItemsSource="{Binding}" Grid.Column="1" Grid.Row="6"/>
+                        <Label Content="Length" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="7" FontSize="24"/>
+                        <TextBox Name="txtLengthUpdate" Grid.Column="1" Grid.Row="7"/>
+                        <Label Content="Rating" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="8" FontSize="24"/>
+                        <TextBox Name="txtRatingUpdate" Grid.Column="1" Grid.Row="8"/>
+                        <Label Content="Actor" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="9" FontSize="24"/>
+                        <ComboBox Name="cb_ActorUpdate" ItemsSource="{Binding}" Grid.Column="1" Grid.Row="9"/>
+                        <Label Content="Category" FontFamily="Times New Roman" Grid.Column="0" Grid.Row="10" FontSize="24"/>
+                        <ComboBox Name="cb_CategoryUpdate" ItemsSource="{Binding}" Grid.Column="1" Grid.Row="10"/>
+                        <Button x:Name="btn_FilmUpdate" Content="Update" Click="Btn_FilmUpdate_Click" Foreground="White" Background="PaleGreen" Grid.Column="0" Grid.Row="11"/>
+                        <Button x:Name="btn_FilmUpdateReset" Content="Reset" Click="btn_FilmUpdateReset_Click" Foreground="White" Background="Tomato" Grid.Column="1" Grid.Row="11"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+
+        <TabItem Header="Delete" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Margin="26.8,-2,-38.6,0">
+            <Grid Margin="15px" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,0.2,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Row="0">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Row="1">Films Details</Label>
+                        <Button 
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="0,50,0,0"
+                   Height="150"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Content="Enter Film ID" Grid.Column="0" Grid.Row="0" FontFamily="Times New Roman" FontSize="24"/>
+                        <TextBox Name="txtFilmIDDelete" Grid.Column="1" Grid.Row="0"/>
+                        <Button Name="btn_FilmDelete" Grid.Column="0" Grid.Row="1" Content="Delete" Click="Btn_FilmDelete_Click" Foreground="White" Background="PaleGreen"/>
+                        <Button x:Name="btn_FilmDeleteReset" Content="Reset" Click="btn_FilmDeleteReset_Click" Foreground="White" Background="Tomato" Grid.Column="1" Grid.Row="1" Height="27" Margin="0,0.2,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Search" FontSize="20" FontFamily="Times New Roman" Margin="37.6,-2,-87.6,2.4">
+            <Grid Margin="15px" Background="WhiteSmoke" Height="939" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="17*"></ColumnDefinition>
+                    <ColumnDefinition Width="353*"/>
+                    <ColumnDefinition Width="370*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Grid.ColumnSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.Row="0" Grid.ColumnSpan="2">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.Row="1" Grid.ColumnSpan="2">Films Details</Label>
+                        <Button 
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="0,50,0,0"
+                   Height="150"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontFamily="Times New Roman" Grid.ColumnSpan="2" Grid.Row="0">Select your preference of search :</Label>
+                        <RadioButton Name="rb_IdSearch" GroupName="SearchGroup" Content="Search by FilmId" Grid.ColumnSpan="2" Grid.Row="1" FontFamily="Times New Roman"></RadioButton>
+                        <RadioButton Name="rb_FilmNameSearch" GroupName="SearchGroup" Content="Search by FilmName" Grid.ColumnSpan="2" Grid.Row="2" FontFamily="Times New Roman"/>
+                        <RadioButton Name="rb_ActorNameSearch" GroupName="SearchGroup" Content="Search by ActorName" Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Times New Roman"/>
+                        <RadioButton Name="rb_CategorySearch" GroupName="SearchGroup" Content="Search by CategoryName" Grid.ColumnSpan="2" Grid.Row="4" FontFamily="Times New Roman"/>
+                        <RadioButton Name="rb_LanguageSearch" GroupName="SearchGroup" Content="Search by LanguageName" Grid.ColumnSpan="2" Grid.Row="5" FontFamily="Times New Roman"/>
+                        <RadioButton Name="rb_RatingSearch" GroupName="SearchGroup" Content="Search by Rating" Grid.ColumnSpan="2" Grid.Row="6" FontFamily="Times New Roman"/>
+                        <Label Content="Enter data to search" Grid.Column="0" Grid.Row="7" FontFamily="Times New Roman"></Label>
+                        <TextBox Name="txtSearchName" Grid.Column="1"  Grid.Row="7"></TextBox>
+                        <Button Name="btn_FilmSearch" Content="Search" Grid.Column="0" Grid.Row="8" Click="Btn_FilmSearch_Click" Foreground="White" Background="PaleGreen"/>
+                        <Button x:Name="btn_FilmSearchReset" Content="Reset" Click="btn_FilmSearchReset_Click" Foreground="White" Background="Tomato" Grid.Column="1" Grid.Row="8"/>
+                        <DataGrid Name="dg_FilmSearchList" ColumnWidth="*" Margin="5"  Grid.Row="9" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="jumbotron" style="background:linear-gradient(-90deg,#ffd800,#3de914,#0fefc6)">
+    <h1 style="font-size:50px; color:blue; text-align:center;"><b>Film Management System</b></h1>
+    <marquee style="font-size:40px;color:green">Welcome to Film Management System!!!!</marquee>
+</div>
+    <div class="col-md-12">
+        <br />
+        <div class="col-md-5" align="left" style="margin-left:80px;">
+
+            <p>
+                @using (Html.BeginForm("HomePage", "Home", FormMethod.Get))
+                {
+                    <input type="submit" class="btn btn-info btn-lg" value="Home" style="margin-top:10px;" />
+                }
+                @using (Html.BeginForm("Index", "Films", FormMethod.Get))
+                {
+                    <input type="submit" class="btn btn-info btn-lg" value="Film Details" style="margin-top:10px;" />
+                }
+                @using (Html.BeginForm("Index", "Actors", FormMethod.Get))
+                {
+                    <input type="submit" class="btn btn-info btn-lg" value="Actor Details" style="margin-top:10px;" />
+                }
+                @using (Html.BeginForm("Index", "Categories", FormMethod.Get))
+                {
+                    <input type="submit" class="btn btn-info btn-lg" value="Category Details" style="margin-top:10px;" />
+                }
+                @using (Html.BeginForm("Index", "Languages", FormMethod.Get))
+                {
+                    <input type="submit" class="btn btn-info btn-lg" value="Language Details" style="margin-top:10px;" />
+                }
+
+            </p>
+        </div>
+    </div>
+
+
+

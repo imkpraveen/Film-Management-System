@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="ActorId" />
+    </Key>
+    <Property Name="ActorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="FilmID" />
+    </Key>
+    <Property Name="FilmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="30" />
+    <Property Name="ReleaseYear" Type="date" />
+    <Property Name="RentalDuration" Type="date" />
+    <Property Name="ReplacementCost" Type="money" />
+    <Property Name="LanguageId" Type="int" />
+    <Property Name="Length" Type="numeric" Precision="6" Scale="2" />
+    <Property Name="Rating" Type="numeric" Precision="2" Scale="1" />
+    <Property Name="ActorId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Film__ActorId__37861642">
+    <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actor">
+        <PropertyRef Name="ActorId" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="ActorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Film__CategoryId__387A3A7B">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Film__LanguageId__3691F209">
+    <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Actor" EntityType="Self.Actor" Schema="praveen" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="praveen" store:Type="Tables" />
+    <EntitySet Name="Film" EntityType="Self.Film" Schema="praveen" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="praveen" store:Type="Tables" />
+    <AssociationSet Name="FK__Film__ActorId__37861642" Association="Self.FK__Film__ActorId__37861642">
+      <End Role="Actor" EntitySet="Actor" />
+      <End Role="Film" EntitySet="Film" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Film__CategoryId__387A3A7B" Association="Self.FK__Film__CategoryId__387A3A7B">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Film" EntitySet="Film" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Film__LanguageId__3691F209" Association="Self.FK__Film__LanguageId__3691F209">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="Film" EntitySet="Film" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,230 @@
+﻿<Window x:Class="FilmManangemenSystemWPF.ActorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FilmManangemenSystemWPF"
+        mc:Ignorable="d"
+        Title="ActorWindow" Height="550" Width="1000">
+    <TabControl Margin="5" Background="Lavender">
+        <TabItem Header="Add" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Width="70">
+            <Grid Margin="15px" Background="WhiteSmoke" RenderTransformOrigin="0.457,0.509">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,0.4,0.2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Row="0">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black" Grid.ColumnSpan="2" Grid.Row="1">Actors Details</Label>
+                        <Button 
+                            Margin="10px"
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="112,50,112.4,0"
+                   Height="118"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="5,20,5,0">
+                    <Label Content="Enter Actor First Name" Padding="5" FontFamily="Times New Roman" FontSize="24"/>
+                    <TextBox Name="txtFNameAdd" Padding="5" Margin="10px"/>
+                    <Label Content="Enter Actor Last Name" Padding="5" FontFamily="Times New Roman" FontSize="24"/>
+                    <TextBox Name="txtLNameAdd" Padding="5" Margin="10px"/>
+                    <Button Name="btn_ActorAdd" Padding="5" Margin="10px" Content="Add" Click="Btn_ActorAdd_Click" Background="PaleGreen" Foreground="White"/>
+                    <Button x:Name="btn_ActorAddReset" Content="Reset" Margin="10px" Click="btn_ActorAddReset_Click" Foreground="White" Background="Tomato" Padding="5"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <TabItem Name="tab_List" Header="List" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Width="70" Loaded="Tab_List_Loaded">
+            <StackPanel Orientation="Vertical">
+                <DataGrid Name="dg_ActorList" Height="380" ColumnWidth="*"></DataGrid>
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="Search" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Margin="0.2,0,-9.6,0">
+            <Grid Margin="15px" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center"  Grid.ColumnSpan="2" Grid.Row="0" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black">Actors Details</Label>
+                        <Button 
+                            Margin="10px"
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="112,50,112.4,0"
+                   Height="118"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Label Content="Enter Actor ID" Padding="5" FontSize="24" FontFamily="Times New Roman"/>
+                    <TextBox Name="txtIDSearch" Padding="5" Margin="10px"/>
+                    <Button Name="btn_ActorSearch" Padding="5" Margin="10px" Content="Search" Click="Btn_ActorSearch_Click" Background="PaleGreen" Foreground="White"/>
+                    <Button x:Name="btn_AcorSearchReset" Content="Reset" Margin="10px" Click="btn_AcorSearchReset_Click" Foreground="White" Background="Tomato" Padding="5"/>
+                    <Label Content="Actor's First Name" Name="lbl_Fname" Padding="5" Visibility="Hidden" />
+                    <Label Name="txtFNameSearch" Padding="5" Foreground="#FF065F16" />
+                    <Label Content="Actor's Last Name" Name="lbl_Lname" Padding="5" Visibility="Hidden"/>
+                    <Label Name="txtLNameSearch" Padding="5"  Foreground="#FF065F16"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Update" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Margin="8.4,0,-33,0">
+            <Grid Margin="15px" Background="WhiteSmoke" RenderTransformOrigin="0.471,0.497">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="199*"></ColumnDefinition>
+                    <ColumnDefinition Width="275*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,1.4,10.2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" Margin="5" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2" Foreground="Blue" FontFamily="Arial Black">Actors Details</Label>
+                        <Button
+                            Margin="10px"
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="112,50,112.4,0"
+                   Height="126"
+                               Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="6.6,0,-0.2,0.2">
+                    <Label Content="Enter Actor ID to Update" Padding="5" FontSize="24" FontFamily="Times New Roman"/>
+                    <TextBox Name="txtIdUpdate" Padding="5" Margin="10px"/>
+                    <Label Content="Enter Actor's First Name" Padding="5" FontFamily="Times New Roman" FontSize="24"/>
+                    <TextBox Name="txtFNameUpdate" Padding="5" Margin="10px"/>
+                    <Label Content="Enter Actor's Last Name" Padding="5" FontFamily="Times New Roman" FontSize="24"/>
+                    <TextBox Name="txtLNameUpdate" Padding="5" Margin="10px"/>
+                    <Button Name="btn_ActorUpdate" Padding="5" Margin="10px" Content="Update" Click="Btn_ActorUpdate_Click" Background="PaleGreen" Foreground="White"/>
+                    <Button x:Name="btn_ActorUpdateReset" Content="Reset" Margin="10px" Click="btn_ActorUpdateReset_Click" Foreground="White" Background="Tomato" Padding="5"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="Delete" Height="30" VerticalAlignment="Top" FontSize="20" FontFamily="Times New Roman" Margin="33,0,-48.6,0">
+            <Grid Margin="15px" Background="WhiteSmoke">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="292*"></RowDefinition>
+                    <RowDefinition Height="151*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,0.4,0.2" Grid.RowSpan="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label FontSize="20" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Normal" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black">Film Managment System</Label>
+                        <Label FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="Blue" FontFamily="Arial Black">Actors Details</Label>
+                        <Button
+                    Margin="10px"
+                    Background="Gold" 
+                    Foreground="White" 
+                    Click="GotoDashboard" 
+                    Content="Main Window" 
+                    FontSize="20" 
+                    FontFamily="Arial Black" 
+                    BorderThickness="0"
+                    Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Image Source="/Images/DashBoard.png"
+                	Width="150"
+                	Margin="112,50,112.4,0"
+                   Height="103"
+                   Grid.RowSpan="1"
+                   Grid.ColumnSpan="2"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.ColumnSpan="2" Margin="474,0,-0.2,0.2" Grid.RowSpan="2">
+                    <Label Content="Enter Actor ID" Padding="5" FontSize="24" FontFamily="Times New Roman"/>
+                    <TextBox Name="txtIDDelete" Padding="5" Margin="10px"/>
+                    <Button Name="btn_ActorDelete" Padding="5" Content="Delete" Margin="10px" Click="Btn_ActorDelete_Click" Background="PaleGreen" Foreground="White"/>
+                    <Button x:Name="btn_ActorDeleteReset" Content="Reset" Margin="10px" Click="btn_ActorDeleteReset_Click" Foreground="White" Background="Tomato" Padding="5"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

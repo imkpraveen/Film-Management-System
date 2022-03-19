@@ -1,0 +1,4 @@
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemExceptionLayer\bin\Debug\FilmManagementSystemExceptionLayer.dll
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemExceptionLayer\bin\Debug\FilmManagementSystemExceptionLayer.pdb
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemExceptionLayer\obj\Debug\FilmManagementSystemExceptionLayer.dll
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemExceptionLayer\obj\Debug\FilmManagementSystemExceptionLayer.pdb

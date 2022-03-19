@@ -1,0 +1,24 @@
+﻿<Application x:Class="FilmManangemenSystemWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FilmManangemenSystemWPF"
+             StartupUri="Login.xaml">
+    <Application.Resources>
+        <ControlTemplate x:Key="Temp1" TargetType="{x:Type Button}">
+            <Grid>
+                <Ellipse x:Name="Ell" Width="{TemplateBinding Width}" Height="35">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Offset="0.3" Color="#b2fefa" />
+                            <GradientStop Offset="1" Color="#0ed2f7"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Viewbox>
+                    <ContentControl Margin="10" Content="{TemplateBinding Content}" FontSize="20" 
+                                    HorizontalContentAlignment="Center" Foreground="Crimson"/>
+                </Viewbox>
+            </Grid>
+        </ControlTemplate>
+    </Application.Resources>
+</Application>

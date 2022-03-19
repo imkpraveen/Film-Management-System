@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FilmManagementSystemMVC.Models.Actor>
+@{
+    ViewBag.Title = "Index";
+}
+<body>
+  <div style="color:black">
+            @Html.ActionLink("Create New", "Create")
+        <div>
+            <table class="table panel table-bordered" style="border-width:thick">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ActorId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ActorId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ActorId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</body>

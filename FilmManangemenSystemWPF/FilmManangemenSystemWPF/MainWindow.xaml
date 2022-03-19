@@ -1,0 +1,104 @@
+﻿<Window x:Class="FilmManangemenSystemWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FilmManangemenSystemWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="885.207" Background="Lavender">
+    <Grid Margin="15px" Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="129*"></ColumnDefinition>
+            <ColumnDefinition Width="268*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Margin="0,0,1,10.4">
+            <Image Margin="0,10,0,0"
+                   Source="/Images/iconfinder_admin_87402.png"
+                   Width="60"
+                   Height="60" />
+            <Button Margin="5,20,5,0"
+                    BorderThickness="0"
+                    Background="SkyBlue"
+                    Foreground="White"
+                    Padding="5" Click="Hyper_film_Click" FontSize="20" FontFamily="Arial Black">
+                Film Details
+            </Button>
+            <Button Margin="5,20,5,0"
+                    BorderThickness="0"
+                    Background="SkyBlue"
+                    Foreground="White"
+                    Padding="5" Click="Hyper_actor_Click" FontSize="20" FontFamily="Arial Black">
+                Actor Details
+            </Button>
+            <Button Margin="5,20,5,0"
+                    BorderThickness="0"
+                    Background="SkyBlue"
+                    Foreground="White"
+                    Padding="5" Click="Hyper_language_Click" FontSize="20" FontFamily="Arial Black">
+                Language Details
+            </Button>
+            <Button Margin="5,20,5,0"
+                    BorderThickness="0"
+                    Background="SkyBlue"
+                    Foreground="White"
+                    Padding="5" Click="Hyper_category_Click" FontSize="20" FontFamily="Arial Black">
+                Category Details
+            </Button>
+        </StackPanel>
+        <Button Margin="433,6,21.6,352.4" Background="SkyBlue" Foreground="White" Click="btn_LogoutClick" FontSize="15" FontFamily="Arial Black" Grid.Column="1">Logout</Button>
+        <StackPanel 
+            Margin="39,38,0.2,0.4"
+            Grid.Column="1">
+            <Label
+                Foreground="#1e88e5"
+                FontSize="48" Height="73" Content="Welcome" Margin="0,0,0.4,0" FontFamily="Segoe UI Black"/>
+            <TextBlock Foreground="#1e88e5"
+                       Margin="10,0,0,0"
+                       FontWeight="Bold" FontSize="35" FontFamily="Segoe UI Black" x:Name="UserName"></TextBlock>
+            <TextBlock Foreground="Black"
+                       Margin="10,0,0,0"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman"><Run Text="This is your dashboard."/></TextBlock>
+            <TextBlock Foreground="Black"
+                       Margin="10,0,84.4,0"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman" Height="51"><Run Text="You can use the features from the sidepanel"/><LineBreak/><Run Text=" and navigate throughout the application."/></TextBlock>
+            <TextBlock Margin="10,0,0,0"
+                       Foreground="Black"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman"><Run Text="This application provides features such as,"/></TextBlock>
+            <TextBlock Margin="10,5,0,0"
+                       Foreground="Black"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman"><Run Text="1.Film Details"/></TextBlock>
+            <TextBlock Margin="10,0,0,0"
+                       Foreground="Black"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman"><Run Text="2.Actor Details"/></TextBlock>
+            <TextBlock Margin="10,0,0,0"
+                       Foreground="Black"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman"><Run Text="3.Language Details"/></TextBlock>
+            <TextBlock Margin="10,0,0,0"
+                       Foreground="Black"
+                       FontWeight="Bold" FontSize="20" FontFamily="Times New Roman"><Run Text="4.Category Details"/></TextBlock>
+        </StackPanel>
+    </Grid>
+    <!--<StackPanel Orientation="Vertical">
+        <Label FontSize="22" HorizontalAlignment="Center" Margin="15" FontStyle="Italic" FontWeight="Bold">Film Managment System</Label>
+        <Label HorizontalAlignment="Center" FontStyle="Italic" FontWeight="Bold" Margin="15" >
+            <Hyperlink Name="Hyper_film" Click="Hyper_film_Click" >Film Details</Hyperlink>
+        </Label>
+        <Label HorizontalAlignment="Center" FontStyle="Italic" FontWeight="Bold" Margin="15" >
+            <Hyperlink Name="Hyper_actor" Click="Hyper_actor_Click" >Actor Details</Hyperlink>
+        </Label>
+        <Label HorizontalAlignment="Center" FontStyle="Italic" FontWeight="Bold" Margin="15">
+            <Hyperlink Name="Hyper_language" Click="Hyper_language_Click" >Language Details</Hyperlink>
+        </Label>
+        <Label HorizontalAlignment="Center" FontStyle="Italic" FontWeight="Bold" Margin="15" >
+            <Hyperlink Name="Hyper_category" Click="Hyper_category_Click" >Category Details</Hyperlink>
+        </Label>
+
+
+
+    </StackPanel>-->
+    <!--</TabItem>
+    </TabControl>-->
+</Window>

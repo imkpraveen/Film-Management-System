@@ -1,0 +1,104 @@
+﻿@model IEnumerable<FilmManagementSystemMVC.Models.Film>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="color:black;font-family:Verdana">
+    <h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <p>
+        @using (@Html.BeginForm("SearchIndex", "Films", FormMethod.Post))
+        {
+            <label style="font-family:'Times New Roman';font-size:30px">Select the choice of search :</label>
+            <select name="searchBox" style="font-family:'Times New Roman';font-size:20px">
+                <option value="Default">Default</option>
+                <option value="Rating">Rating</option>
+                <option value="Language">Language</option>
+                <option value="Genre">Genre</option>
+                <option value="Actor">Actor</option>
+            </select>
+            @Html.TextBox("searchText")
+            <input type="submit" value="Search" name="Search" class="btn btn-success" />
+        }
+    </p>
+    <table class="table panel table-bordered" style="border-width:thick">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Language.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReplacementCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actor.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Language.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RentalDuration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReplacementCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Length)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FilmID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.FilmID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FilmID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

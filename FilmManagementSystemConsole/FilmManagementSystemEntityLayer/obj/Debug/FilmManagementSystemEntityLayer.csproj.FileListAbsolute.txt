@@ -1,0 +1,4 @@
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemEntityLayer\bin\Debug\FilmManagementSystemEntityLayer.dll
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemEntityLayer\bin\Debug\FilmManagementSystemEntityLayer.pdb
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemEntityLayer\obj\Debug\FilmManagementSystemEntityLayer.dll
+E:\PLP-Console\FilmManagementSystemConsole\FilmManagementSystemEntityLayer\obj\Debug\FilmManagementSystemEntityLayer.pdb

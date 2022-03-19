@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @if (Session["isAuthenticated"] != null)
+    {
+        //navbar navbar-inverse navbar -fixed-top
+        <div class="navbar navbar-inverse navbar-fixed-top" id="header" style="background:linear-gradient(-90deg,#00ff21,#00ff90,#ffd800)">
+            <div class="container">
+                <div class="navbar-header">
+                    @Html.ActionLink("Home", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Film Details", "Index", "Films", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Actor Details", "Index", "Actors", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Language Details", "Index", "Languages", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Category Details", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Contact Us", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("About US", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Logout", "LoginIndex", "LoginRegistration", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer id="footer">
+            @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+            <p style="color:black;font-size:25px">&copy;Praveenkumar</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

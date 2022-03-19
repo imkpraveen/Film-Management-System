@@ -1,0 +1,106 @@
+﻿@model FilmManagementSystemMVC.Models.Film
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div style="color:black">
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Film</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Actor.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Actor.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Language.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Language.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReleaseYear)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReleaseYear)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RentalDuration)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RentalDuration)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ReplacementCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReplacementCost)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Length)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Length)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

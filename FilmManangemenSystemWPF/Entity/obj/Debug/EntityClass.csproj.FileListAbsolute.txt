@@ -1,0 +1,17 @@
+E:\Parallel Project\FilmManangemenSystemWPF\Entity\bin\Debug\Entity.dll
+E:\Parallel Project\FilmManangemenSystemWPF\Entity\bin\Debug\Entity.pdb
+E:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\Entity.dll
+E:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\Entity.pdb
+E:\Parallel Practice\FilmManangemenSystemWPF\Entity\bin\Debug\Entity.dll
+E:\Parallel Practice\FilmManangemenSystemWPF\Entity\bin\Debug\Entity.pdb
+E:\Parallel Practice\FilmManangemenSystemWPF\Entity\obj\Debug\EntityClass.csprojResolveAssemblyReference.cache
+E:\Parallel Practice\FilmManangemenSystemWPF\Entity\obj\Debug\Entity.dll
+E:\Parallel Practice\FilmManangemenSystemWPF\Entity\obj\Debug\Entity.pdb
+D:\Parallel Project\FilmManangemenSystemWPF\Entity\bin\Debug\Entity.dll
+D:\Parallel Project\FilmManangemenSystemWPF\Entity\bin\Debug\Entity.pdb
+D:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\EntityClass.csprojAssemblyReference.cache
+D:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\EntityClass.csproj.CoreCompileInputs.cache
+D:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\Entity.dll
+D:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\Entity.pdb
+E:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\EntityClass.csprojAssemblyReference.cache
+E:\Parallel Project\FilmManangemenSystemWPF\Entity\obj\Debug\EntityClass.csproj.CoreCompileInputs.cache

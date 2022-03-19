@@ -1,0 +1,17 @@
+E:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\bin\Debug\ExceptionFilm.dll
+E:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\bin\Debug\ExceptionFilm.pdb
+E:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionFilm.dll
+E:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionFilm.pdb
+E:\Parallel Practice\FilmManangemenSystemWPF\ExceptionFilm\bin\Debug\ExceptionFilm.dll
+E:\Parallel Practice\FilmManangemenSystemWPF\ExceptionFilm\bin\Debug\ExceptionFilm.pdb
+E:\Parallel Practice\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionClass.csprojResolveAssemblyReference.cache
+E:\Parallel Practice\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionFilm.dll
+E:\Parallel Practice\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionFilm.pdb
+D:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\bin\Debug\ExceptionFilm.dll
+D:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\bin\Debug\ExceptionFilm.pdb
+D:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionClass.csprojAssemblyReference.cache
+D:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionClass.csproj.CoreCompileInputs.cache
+D:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionFilm.dll
+D:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionFilm.pdb
+E:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionClass.csprojAssemblyReference.cache
+E:\Parallel Project\FilmManangemenSystemWPF\ExceptionFilm\obj\Debug\ExceptionClass.csproj.CoreCompileInputs.cache

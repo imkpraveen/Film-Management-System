@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="ActorId" />
+    </Key>
+    <Property Name="ActorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Film__ActorId__37861642" FromRole="Actor" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Film__CategoryId__387A3A7B" FromRole="Category" ToRole="Film" />
+  </EntityType>
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="FilmID" />
+    </Key>
+    <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ReleaseYear" Type="DateTime" Precision="0" />
+    <Property Name="RentalDuration" Type="DateTime" Precision="0" />
+    <Property Name="ReplacementCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="LanguageId" Type="Int32" />
+    <Property Name="Length" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="Rating" Type="Decimal" Precision="2" Scale="1" />
+    <Property Name="ActorId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <NavigationProperty Name="Actor" Relationship="Self.FK__Film__ActorId__37861642" FromRole="Film" ToRole="Actor" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Film__CategoryId__387A3A7B" FromRole="Film" ToRole="Category" />
+    <NavigationProperty Name="Language" Relationship="Self.FK__Film__LanguageId__3691F209" FromRole="Film" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Film__LanguageId__3691F209" FromRole="Language" ToRole="Film" />
+  </EntityType>
+  <Association Name="FK__Film__ActorId__37861642">
+    <End Role="Actor" Type="Self.Actor" Multiplicity="0..1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actor">
+        <PropertyRef Name="ActorId" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="ActorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Film__CategoryId__387A3A7B">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Film__LanguageId__3691F209">
+    <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actors" EntityType="Self.Actor" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Films" EntityType="Self.Film" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <AssociationSet Name="FK__Film__ActorId__37861642" Association="Self.FK__Film__ActorId__37861642">
+      <End Role="Actor" EntitySet="Actors" />
+      <End Role="Film" EntitySet="Films" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Film__CategoryId__387A3A7B" Association="Self.FK__Film__CategoryId__387A3A7B">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Film" EntitySet="Films" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Film__LanguageId__3691F209" Association="Self.FK__Film__LanguageId__3691F209">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Film" EntitySet="Films" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
