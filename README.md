@@ -29,13 +29,13 @@ FMS aims to manage complete life cycle of film viz add (create a film – where 
       *  Rating
       
 *  Search Film
-   Users are able to search a film by film title, release year, rating User may use any one, two or all the three parameters to search a film.
+   *  Users are able to search a film by film title, release year, rating User may use any one, two or all the three parameters to search a film.
    
 *  Modify Film
-   Search (film title, release year, rating) film and modify the info of film. System will show existing data/info of film and should support modify of one, more or       all info.
+   *  Search (film title, release year, rating) film and modify the info of film. System will show existing data/info of film and should support modify of one, more or       all info.
    
 *  Remove Film
-   Search (film title, release year, rating) and remove the film. System will ask for confirmation and on confirmation the data will be removed.
+   *  Search (film title, release year, rating) and remove the film. System will ask for confirmation and on confirmation the data will be removed.
 
 ## Contributors
 
